@@ -1,0 +1,37 @@
+<article class="post">
+  <div class="post-title">
+    <%= page.title %>
+  </div>
+  <div class="flex-center-between">
+    <ul class="tag-list flex-center-start">
+      <% page.tags.forEach(function(tag, i){ %> 
+        <li>
+          <a href="javascript:void(0)"><%-tag.name%></a>
+        </li>
+      <% }) %>
+    </ul>
+    <div class="post-meta">
+      <span class="post-time"><i class="iconfont icondengdai"></i><%- date(page.date, "YYYY-MM-DD") %></span>
+    </div>
+  </div>
+  <div class="post-content">
+    <%- page.content %>
+  </div>
+</article>
+
+<% if (page.prev || page.next){ %>
+  <nav class="article-nav" class="clearfix">
+    <% if (page.prev){ %>
+      <a href="<%- url_for(page.prev.path) %>" class="fl">
+        <i class="icon-circle-left"></i>
+        <span><%= page.prev.title %></span>
+      </a>
+    <% } %>
+    <% if (page.next){ %>
+      <a href="<%- url_for(page.next.path) %>" class="fr">
+        <span><%= page.next.title %></span>
+        <i class="icon-circle-right"></i>
+      </a>
+    <% } %>
+  </nav>
+<% } %>
