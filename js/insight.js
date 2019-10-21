@@ -17,7 +17,7 @@
 
     function searchItem (icon, title, slug, preview, url) {
         return $('<div>').addClass('ins-selectable').addClass('ins-search-item')
-            .append($('<header>').append($('<i>').addClass('fa').addClass('fa-' + icon))
+            .append($('<header>').append($('<i>').addClass('iconfont').addClass(icon))
                 .append($('<span>').addClass('ins-title').text(title != null && title !== '' ? title : CONFIG.TRANSLATION['UNTITLED']))
                 .append(slug ? $('<span>').addClass('ins-slug').text(slug) : null))
             .append(preview ? $('<p>').addClass('ins-search-preview').text(preview) : null)
@@ -34,13 +34,13 @@
             case 'PAGES':
                 $searchItems = array.map(function (item) {
                     // Use config.root instead of permalink to fix url issue
-                    return searchItem('file', item.title, null, item.text.slice(0, 150), item.link);
+                    return searchItem('icondengdai', item.title, null, item.text.slice(0, 150), item.link);
                 });
                 break;
             case 'CATEGORIES':
             case 'TAGS':
                 $searchItems = array.map(function (item) {
-                    return searchItem(type === 'CATEGORIES' ? 'folder' : 'tag', item.name, item.slug, null, item.link);
+                    return searchItem(type === 'CATEGORIES' ? 'iconicon_calendar' : 'iconicon_airplay', item.name, item.slug, null, item.link);
                 });
                 break;
             default:

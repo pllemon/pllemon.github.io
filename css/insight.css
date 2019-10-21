@@ -1,6 +1,13 @@
 .ins-section-container {
     position: relative;
-    background: #f7f7f7;
+    background: #fff;
+}
+
+.ins-section-container .ins-section{
+    margin-bottom: 30px;
+}
+.ins-section-container .ins-section:last-child{
+    margin-bottom: 0;
 }
 
 .ins-section {
@@ -13,8 +20,6 @@
 }
 
 .ins-section .ins-section-header {
-    color: #9a9a9a;
-    border-bottom: 1px solid #e2e2e2;
 }
 
 .ins-section .ins-slug {

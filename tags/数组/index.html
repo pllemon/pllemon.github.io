@@ -7,22 +7,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>vue + element-ui + vue-i18n 实现多语言切换 - Hexo</title>
+<title>标签: 数组 - Hexo</title>
 
 
-    <meta name="description" content="项目需求：系统需要实现多语言切换">
-<meta name="keywords" content="i18n,插件">
-<meta property="og:type" content="article">
-<meta property="og:title" content="vue + element-ui + vue-i18n 实现多语言切换">
-<meta property="og:url" content="http://yoursite.com/2019/10/18/myblog/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/tags/数组/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="项目需求：系统需要实现多语言切换">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-10-21T02:06:17.859Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue + element-ui + vue-i18n 实现多语言切换">
-<meta name="twitter:description" content="项目需求：系统需要实现多语言切换">
+<meta name="twitter:title" content="Hexo">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -82,7 +77,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="vue + element-ui + vue-i18n 实现多语言切换" height="28">
+                <img src="/images/logo.svg" alt="Hexo" height="28">
             
             </a>
         </div>
@@ -118,10 +113,6 @@
                     
                 
                 
-                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
-                    <i class="fas fa-list-ul"></i>
-                </a>
-                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -136,25 +127,35 @@
         <div class="container">
             <div class="columns">
                 <!-- 主内容 -->
-                <div class="column is-9-tablet is-9-desktop is-9-widescreen has-order-2 column-main">
+                <div class="column is-9-tablet is-9-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">标签</a></li>
+            <li class="is-active"><a href="#" aria-current="page">数组</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
 
+    
 <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-18T05:33:30.000Z">2019-10-18</time>
+                <time class="level-item has-text-grey" datetime="2019-10-21T05:33:30.000Z">2019-10-21</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/VUE/">VUE</a>
+                <a class="has-link-grey -link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 286 个字)
+                    1 分钟 读完 (大约 206 个字)
                 </span>
                 
                 
@@ -163,114 +164,33 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                vue + element-ui + vue-i18n 实现多语言切换
+                <a class="has-link-black-ter" href="/2019/10/21/数组/">数组的基本方法小结</a>
             
         </h1>
         <div class="content">
             <blockquote>
 <p>项目需求：系统需要实现多语言切换</p>
 </blockquote>
-<a id="more"></a>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-i18n</span><br></pre></td></tr></table></figure>
-
-<h1 id="创建相关文件"><a href="#创建相关文件" class="headerlink" title="创建相关文件"></a>创建相关文件</h1><ul>
-<li><p>新建文件目录如下</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">├—— App.vue</span><br><span class="line">├—— i18n</span><br><span class="line">│   ├—— i18n.js</span><br><span class="line">│   └—— langs</span><br><span class="line">│       ├—— cn.js</span><br><span class="line">│       ├—— en.js</span><br><span class="line">│       └—— index.js</span><br><span class="line">├—— main.js</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>i18n.js 基本配置</p>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span></span><br><span class="line"><span class="hljs-keyword">import</span> locale <span class="hljs-keyword">from</span> <span class="hljs-string">'element-ui/lib/locale'</span></span><br><span class="line"><span class="hljs-keyword">import</span> VueI18n <span class="hljs-keyword">from</span> <span class="hljs-string">'vue-i18n'</span></span><br><span class="line"><span class="hljs-keyword">import</span> messages <span class="hljs-keyword">from</span> <span class="hljs-string">'./langs'</span></span><br><span class="line"></span><br><span class="line">Vue.use(VueI18n)</span><br><span class="line"><span class="hljs-keyword">const</span> i18n = <span class="hljs-keyword">new</span> VueI18n(&#123;</span><br><span class="line">  locale: localStorage.getItem(<span class="hljs-string">'systemLang'</span>) || <span class="hljs-string">'cn'</span>,</span><br><span class="line">  messages</span><br><span class="line">&#125;)</span><br><span class="line">locale.i18n(<span class="hljs-function">(<span class="hljs-params">key, value</span>) =&gt;</span> i18n.t(key, value))</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> i18n</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>langs/index.js 导出不同语言包</p>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> en <span class="hljs-keyword">from</span> <span class="hljs-string">'./en'</span></span><br><span class="line"><span class="hljs-keyword">import</span> cn <span class="hljs-keyword">from</span> <span class="hljs-string">'./cn'</span></span><br><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="line">  en,</span><br><span class="line">  cn</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>langs/en.js 定义English语言包</p>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> enLocale <span class="hljs-keyword">from</span> <span class="hljs-string">'element-ui/lib/locale/lang/en'</span></span><br><span class="line"><span class="hljs-keyword">const</span> en = &#123;</span><br><span class="line">  message: &#123;</span><br><span class="line">    <span class="hljs-string">'hello'</span>: <span class="hljs-string">'hello, world'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  ...enLocale</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> en</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>langs/cn.js 定义中文语言包</p>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> zhLocale <span class="hljs-keyword">from</span> <span class="hljs-string">'element-ui/lib/locale/lang/zh-CN'</span></span><br><span class="line"><span class="hljs-keyword">const</span> cn = &#123;</span><br><span class="line">  message: &#123;</span><br><span class="line">    <span class="hljs-string">'hello'</span>: <span class="hljs-string">'你好，世界'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  ...zhLocale</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> cn</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h1 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h1><ul>
-<li>main.js 记住要在vue实例里引入i18n<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> i18n <span class="hljs-keyword">from</span> <span class="hljs-string">'./i18n/i18n'</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">new</span> Vue(&#123;</span><br><span class="line">  store,</span><br><span class="line">  i18n,</span><br><span class="line">  render: <span class="hljs-function"><span class="hljs-params">h</span> =&gt;</span> h(App)</span><br><span class="line">&#125;).$mount(<span class="hljs-string">'#app'</span>)</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h1 id="修改模板"><a href="#修改模板" class="headerlink" title="修改模板"></a>修改模板</h1><h1 id="切换语言"><a href="#切换语言" class="headerlink" title="切换语言"></a>切换语言</h1><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  switchLang(val)  &#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.$i18n.locale = val </span><br><span class="line">    localStorage.setItem(<span class="hljs-string">'systemLang'</span>, val)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
-        <div class="level is-size-7 is-uppercase">
+        
+        <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/i18n/">i18n</a>, <a class="has-link-grey -link" href="/tags/插件/">插件</a>
+                <a class="button is-size-7 is-light" href="/2019/10/21/数组/#more">阅读更多</a>
                 </div>
             </div>
         </div>
         
         
-        
     </div>
 </div>
 
 
 
-<div class="card">
-    <div class="card-content">
-        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
-        <div class="buttons is-centered">
-            
-                
-<div class="notification is-danger">
-    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                
-<div class="notification is-danger">
-    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
-
-<div class="notification is-danger">
-    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                
-<div class="notification is-danger">
-    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-        </div>
-    </div>
-</div>
 
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/10/21/数组/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">数组的基本方法小结</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/16/hello-world/">
-                <span class="level-item">Hello World</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
-    </div>
-</div>
 
 
 </div>
@@ -395,38 +315,6 @@
 </div>
     
         
-
-    <div class="card widget" id="toc">
-        <div class="card-content">
-            <div class="menu">
-                <h3 class="menu-label">
-                    目录
-                </h3>
-                <ul class="menu-list"><li>
-        <a class="is-flex" href="#安装">
-        <span class="has-mr-6">1</span>
-        <span>安装</span>
-        </a></li><li>
-        <a class="is-flex" href="#创建相关文件">
-        <span class="has-mr-6">2</span>
-        <span>创建相关文件</span>
-        </a></li><li>
-        <a class="is-flex" href="#引入">
-        <span class="has-mr-6">3</span>
-        <span>引入</span>
-        </a></li><li>
-        <a class="is-flex" href="#修改模板">
-        <span class="has-mr-6">4</span>
-        <span>修改模板</span>
-        </a></li><li>
-        <a class="is-flex" href="#切换语言">
-        <span class="has-mr-6">5</span>
-        <span>切换语言</span>
-        </a></li></ul>
-            </div>
-        </div>
-    </div>
-
     
         <div class="card widget">
     <div class="card-content">
@@ -666,7 +554,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="vue + element-ui + vue-i18n 实现多语言切换" height="28">
+                    <img src="/images/logo.svg" alt="Hexo" height="28">
                 
                 </a>
                 <p class="is-size-7">

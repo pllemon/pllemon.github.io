@@ -75,10 +75,10 @@
 .searchbox .searchbox-container {
     left: 50%;
     top: 100px;
-    width: 540px;
+    width: 800px;
     z-index: 101;
     bottom: 100px;
-    margin-left: -270px;
+    margin-left: -400px;
     box-sizing: border-box;
 }
 
