@@ -1,5 +1,6 @@
 ---
 title: vue + element-ui + vue-i18n 实现多语言切换
+toc: true
 date: 2019-10-18 13:33:30
 tags: [i18n, 插件]
 categories: [VUE]
